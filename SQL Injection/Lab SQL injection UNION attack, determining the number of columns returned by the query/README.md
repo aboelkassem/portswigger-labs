@@ -5,5 +5,5 @@
 **Solution**: in Query parameter add multiple nullable unions until one is working to know columns number (3), add: 1' UNION SELECT NULL, NULL, NULL --
 
 <p align="center" width="100%">
-  <img src="https://github.com/aboelkassem/portswigger-labs/raw/main/SQL%20Injection/Lab%20SQL%20injection%20vulnerability%20in%20WHERE%20clause%20allowing%20retrieval%20of%20hidden%20data/image1.png" width="500" hight="500"/>
+  <img src="https://github.com/aboelkassem/portswigger-labs/blob/main/SQL%20Injection/Lab%20SQL%20injection%20UNION%20attack,%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query/image1.png?raw=true" width="500" hight="500"/>
 </p>
