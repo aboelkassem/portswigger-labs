@@ -13,4 +13,7 @@ How to check it?
     - Try make an error like pass array of strings instead of one string
 
 ## Labs
-- 
+- [Lab CSRF vulnerability with no defenses](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF/Lab%20CSRF%20vulnerability%20with%20no%20defenses)
+- [Lab CSRF where token is not tied to user session](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF/Lab%20CSRF%20where%20token%20is%20not%20tied%20to%20user%20session)
+- [Lab CSRF where token validation depends on request method](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF/Lab%20CSRF%20where%20token%20validation%20depends%20on%20request%20method)
+- [Lab CSRF where token validation depends on token being present](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF/Lab%20CSRF%20where%20token%20validation%20depends%20on%20token%20being%20present)
