@@ -6,9 +6,9 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] Account Take Over
 - [x] Authentication
 - [x] Broken Access Control
-- [x] Clickjacking
+- [x] [Clickjacking](https://github.com/aboelkassem/portswigger-labs/tree/main/Clickjacking)
 - [x] CORS
-- [x] CSRF
+- [x] [CSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF)
 - [x] File Upload
 - [x] HTTP request smuggling
 - [x] Information Disclosure
@@ -16,7 +16,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] JWT
 - [x] OS Command Injection
 - [x] Ouath2
-- [x] Path Traversal (Directory Traversal)
+- [x] [Path Traversal (Directory Traversal)](https://github.com/aboelkassem/portswigger-labs/tree/main/Path%20Traversal%20(Directory%20Traversal))
 - [x] Server-side template injection
 - [x] [SQL Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection)
 - [x] SSRF
