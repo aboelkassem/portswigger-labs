@@ -1,2 +1,6 @@
-# portswigger-labs
-This is my space for practicing portswigger labs and web vulnerabilities
+# Clickjacking
+The main idea is to fool the user with HTML to click somewhere in the page to do another action in the background
+This vulnerability requires user interaction.
+
+# Labs
+- 
