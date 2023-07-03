@@ -39,4 +39,7 @@
 - in POST we add --SPACE or ’ #
 
 ## Labs
-- Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data
+- [Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection/Lab%20SQL%20injection%20vulnerability%20in%20WHERE%20clause%20allowing%20retrieval%20of%20hidden%20data)
+- [Lab SQL injection vulnerability allowing login bypass](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection/Lab%20SQL%20injection%20vulnerability%20allowing%20login%20bypass)
+- [Lab SQL injection UNION attack, determining the number of columns returned by the query](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection/Lab%20SQL%20injection%20UNION%20attack%2C%20determining%20the%20number%20of%20columns%20returned%20by%20the%20query)
+- [Lab SQL injection UNION attack, finding a column containing text](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection/Lab%20SQL%20injection%20UNION%20attack%2C%20finding%20a%20column%20containing%20text)
