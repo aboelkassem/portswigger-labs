@@ -18,7 +18,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] Ouath2
 - [x] Path Traversal (Directory Traversal)
 - [x] Server-side template injection
-- [x] SQL Injection
+- [x] [SQL Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection)
 - [x] SSRF
 - [x] XXE
 
