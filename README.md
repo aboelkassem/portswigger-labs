@@ -3,24 +3,24 @@ This is my space for practicing portswigger labs and web vulnerabilities. The co
 
 # List of Vulnerabilities
 The repository covers a wide range of web vulnerabilities, including but not limited to:
-- [ ] Account Take Over
-- [ ] Authentication
-- [ ] Broken Access Control
-- [ ] Clickjacking
-- [ ] CORS
-- [ ] CSRF
-- [ ] File Upload
-- [ ] HTTP request smuggling
-- [ ] Information Disclosure
-- [ ] Insecure deserialization
-- [ ] JWT
-- [ ] OS Command Injection
-- [ ] Ouath2
-- [ ] Path Traversal (Directory Traversal)
-- [ ] Server-side template injection
-- [ ] SQL Injection
-- [ ] SSRF
-- [ ] XXE
+- [x] Account Take Over
+- [x] Authentication
+- [x] Broken Access Control
+- [x] Clickjacking
+- [x] CORS
+- [x] CSRF
+- [x] File Upload
+- [x] HTTP request smuggling
+- [x] Information Disclosure
+- [x] Insecure deserialization
+- [x] JWT
+- [x] OS Command Injection
+- [x] Ouath2
+- [x] Path Traversal (Directory Traversal)
+- [x] Server-side template injection
+- [x] SQL Injection
+- [x] SSRF
+- [x] XXE
 
 # Contributing
 
