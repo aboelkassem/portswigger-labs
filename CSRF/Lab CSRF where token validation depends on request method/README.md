@@ -3,6 +3,7 @@
 **Link**: [https://portswigger.net/web-security/csrf/lab-no-defenses](https://portswigger.net/web-security/csrf/bypassing-token-validation/lab-token-validation-depends-on-request-method)
 
 **Solution**: seems that the CSRF token is fixed and there is no validation
+
 1- Intercept the request with burp
 
 2- Change the POST request to GET and delete the csrf token paramter
