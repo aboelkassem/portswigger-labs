@@ -6,5 +6,9 @@ The main steps
 
 https://portswigger.net/web-security/file-upload
 
+<p align="center" width="100%">
+  <img src="file-upload.jpeg" width="800" hight="500"/>
+</p>
+
 # Labs
 - 
