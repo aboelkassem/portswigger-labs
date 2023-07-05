@@ -1,17 +1,16 @@
-# Lab: Web shell upload via obfuscated file extension
+# Lab: Remote code execution via polyglot web shell upload
 
-**Link**: https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-obfuscated-file-extension
+**Link**: https://portswigger.net/web-security/file-upload/lab-file-upload-remote-code-execution-via-polyglot-web-shell-upload
 
 **Solution**:
-The problem is whitelisted only two extensions (accept only two extensions jpg and png)
 
-We can use null character injection ⇒ https://infosecwriteups.com/bypass-server-upload-restrictions-69054c5e1be4
+This time is to validate the image content (validate file signature https://en.wikipedia.org/wiki/List_of_file_signatures)
+
+To bypass it, leave the signature and write the php code below it
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
-
-if you give it this `payload.php%00.jpg` it will uploaded successfully but the server will ignore anything after %00 ⇒ `payload.php%00.jpg` = `payload.php .jpg` = `payload.php`
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
@@ -19,8 +18,4 @@ if you give it this `payload.php%00.jpg` it will uploaded successfully but the s
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image4.png" width="800" hight="500"/>
 </p>
