@@ -1,4 +1,4 @@
-# Lab: simple case
+# Lab: Web shell upload via path traversal
 
 **Link**: https://portswigger.net/web-security/file-upload/lab-file-upload-web-shell-upload-via-path-traversal
 
