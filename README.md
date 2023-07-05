@@ -20,7 +20,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] Server-side template injection
 - [x] [SQL Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection)
 - [x] SSRF
-- [x] XXE
+- [x] [XXE](https://github.com/aboelkassem/portswigger-labs/tree/main/XXE)
 
 # Contributing
 
