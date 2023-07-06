@@ -7,7 +7,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] Authentication
 - [x] Broken Access Control
 - [x] [Clickjacking](https://github.com/aboelkassem/portswigger-labs/tree/main/Clickjacking)
-- [x] CORS
+- [x] [CORS](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS)
 - [x] [CSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF)
 - [x] [File Upload](https://github.com/aboelkassem/portswigger-labs/tree/main/File%20Upload)
 - [x] HTTP request smuggling
