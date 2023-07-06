@@ -1,18 +1,21 @@
-# Lab: Information disclosure in error messages
+# Lab: Information disclosure on debug page
 
-**Link**: https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages
+**Link**: https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-on-debug-page
 
 **Solution**:
-We will try to cause error in query parameter,
-
-instead of `/product?productId=3` to be `/product?productId=asdasdasdas`
+If we see the Source code of the page, we will see the path to debug page
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-past this `Apache Struts 2 2.3.31` to the solution
+If we navigate to it `/cgi-bin/phpinfo.php`
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
+
+<p align="center" width="100%">
+  <img src="image3.png" width="800" hight="500"/>
+</p>
+
