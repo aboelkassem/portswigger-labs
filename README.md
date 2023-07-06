@@ -11,7 +11,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] [CSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF)
 - [x] [File Upload](https://github.com/aboelkassem/portswigger-labs/tree/main/File%20Upload)
 - [x] HTTP request smuggling
-- [x] Information Disclosure
+- [x] [Information Disclosure](https://github.com/aboelkassem/portswigger-labs/tree/main/Information%20Disclosure)
 - [x] Insecure deserialization
 - [x] JWT
 - [x] OS Command Injection
