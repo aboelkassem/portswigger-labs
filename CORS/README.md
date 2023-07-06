@@ -13,4 +13,6 @@ CORS = cross origin resource sharing ⇒ predefined rules for specific websites 
     - Access-Control-Allow-Credentials: true ⇒ enable host to request another host even if the user logged in (allow credentials exchange)
 
  ## Labs 
- - 
+ - [Lab CORS vulnerability with basic origin reflection](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS/Lab%20CORS%20vulnerability%20with%20basic%20origin%20reflection)
+ - [Lab CORS vulnerability with trusted null origin](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS/Lab%20CORS%20vulnerability%20with%20trusted%20null%20origin)
+ - [Lab CORS vulnerability with trusted insecure protocols](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS/Lab%20CORS%20vulnerability%20with%20trusted%20insecure%20protocols)
