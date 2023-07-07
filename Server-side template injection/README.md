@@ -37,4 +37,8 @@ The methodology to perform this attack
   </p>
 
 ## Labs
-- 
+- [Lab Basic server-side template injection](https://github.com/aboelkassem/portswigger-labs/tree/main/Server-side%20template%20injection/Lab%20Basic%20server-side%20template%20injection)
+- [Lab Basic server-side template injection (code context)](https://github.com/aboelkassem/portswigger-labs/tree/main/Server-side%20template%20injection/Lab%20Basic%20server-side%20template%20injection%20(code%20context))
+- [Lab Server-side template injection using documentation](https://github.com/aboelkassem/portswigger-labs/tree/main/Server-side%20template%20injection/Lab%20Server-side%20template%20injection%20using%20documentation)
+- [Lab: Server-side template injection in an unknown language with a documented exploit](https://github.com/aboelkassem/portswigger-labs/tree/main/Server-side%20template%20injection/Lab%20Server-side%20template%20injection%20in%20an%20unknown%20language%20with%20a%20documented%20exploit)
+- [Lab: Server-side template injection with information disclosure via user-supplied objects](https://github.com/aboelkassem/portswigger-labs/tree/main/Server-side%20template%20injection/Lab%20Server-side%20template%20injection%20with%20information%20disclosure%20via%20user-supplied%20objects)
