@@ -1,28 +1,43 @@
-# Lab: HTTP request smuggling, basic TE.CL vulnerability
+# Lab: Modifying serialized objects
 
-**Link**: https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl
+**Link**: https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-modifying-serialized-objects
 
 **Solution**:
 
-دا عكس اللاب الي فات … الفرونت بيدعم الtransfer encoding و السيرفر بيدعم content length
-
-ف عشان كدا هنلعب ف ال transfer-encoding
-
-ف هنا هنديلة حجم الchunk كلها مرة واحدة بالhexdecimal 
-
-وبكدا هيفهم ان الريكوست خلص وينقل علي الي بعدة
-
-The following screen shows
-
-- We need to pass the content-length: xx in the second request to make the server understand it
-- If we calculated the selection part in hexadecimal, we will find it `2b`
-- So, we but that the chunked size `2b` for then next request to be reflected
-
+In this lab, if we take the session string and decode it use URL encoding and then base64
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
+We will see this object
+
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
+</p>
+
+Or we can use Burp inspector
+
+<p align="center" width="100%">
+  <img src="image3.png" width="800" hight="500"/>
+</p>
+
+we can modify it `b:0` (boolean: false) to `b:1` (admin:true) and encode it again
+
+Edit the cookies and then `Apply Changes`
+
+<p align="center" width="100%">
+  <img src="image4.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image5.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image6.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image7.png" width="800" hight="500"/>
 </p>
