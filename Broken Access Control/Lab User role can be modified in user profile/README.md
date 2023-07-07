@@ -1,24 +1,22 @@
-# Lab: User role controlled by request parameter
+# Lab: User role can be modified in user profile
 
-**Link**: https://portswigger.net/web-security/access-control/lab-user-role-controlled-by-request-parameter
+**Link**: https://portswigger.net/web-security/access-control/lab-user-role-can-be-modified-in-user-profile
 
 **Solution**:
 
-If we spider the website, we will see that if we navigate to /admin 
+If we navigate to account settings and change email, you will notice that the roleId returned in the response.
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-With normal user, there is in the cookies flag called `Admin=false`
-
-If we changed it to true
+We will try to add this parameter to the body and it accepts it 😃
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-It gives me the admin panel
+Then, we are admin now
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
