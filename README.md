@@ -10,7 +10,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] [CORS](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS)
 - [x] [CSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF)
 - [x] [File Upload](https://github.com/aboelkassem/portswigger-labs/tree/main/File%20Upload)
-- [x] HTTP request smuggling
+- [x] [HTTP request smuggling](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling)
 - [x] [Information Disclosure](https://github.com/aboelkassem/portswigger-labs/tree/main/Information%20Disclosure)
 - [x] Insecure deserialization
 - [x] JWT
