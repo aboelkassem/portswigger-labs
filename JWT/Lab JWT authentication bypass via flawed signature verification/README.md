@@ -1,34 +1,23 @@
-# Lab: JWT authentication bypass via unverified signature
+# Lab: JWT authentication bypass via flawed signature verification
 
-**Link**: https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-unverified-signature
+**Link**: https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-flawed-signature-verification
 
 **Solution**:
 
-In this lab we will use burp extension called JWT editor.
+This lab is accept unsigned JWTs, so we will give it null in the signature
 
-- Highlight the requests that used JWT
-- In the repeater, there is JWT token editor
-  
+In JSON Web token editor, in the Attack button below, choose `non signing algorithm`
+
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-This lab is not to verify the signature which consists of
+Send the request.
 
 <p align="center" width="100%">
   <img src="image2.png" width="400" hight="500"/>
 </p>
 
-So, if I change the username in the payload, it accept it and go admin panel.
-
 <p align="center" width="100%">
   <img src="image3.png" width="400" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image4.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image5.png" width="800" hight="500"/>
 </p>
