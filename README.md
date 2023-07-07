@@ -5,7 +5,7 @@ This is my space for practicing portswigger labs and web vulnerabilities. The co
 The repository covers a wide range of web vulnerabilities, including but not limited to:
 - [x] Account Take Over
 - [x] Authentication
-- [x] Broken Access Control
+- [x] [Broken Access Control](https://github.com/aboelkassem/portswigger-labs/tree/main/Broken%20Access%20Control)
 - [x] [Clickjacking](https://github.com/aboelkassem/portswigger-labs/tree/main/Clickjacking)
 - [x] [CORS](https://github.com/aboelkassem/portswigger-labs/tree/main/CORS)
 - [x] [CSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/CSRF)
