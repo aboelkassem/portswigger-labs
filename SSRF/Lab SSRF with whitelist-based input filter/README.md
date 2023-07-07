@@ -1,40 +1,64 @@
-# Lab: SSRF with blacklist-based input filter
+# Lab: SSRF with whitelist-based input filter
 
-**Link**: https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter
+**Link**: https://portswigger.net/web-security/ssrf/lab-ssrf-with-whitelist-filter
 
 **Solution**:
 
-In this lab, the developer has blacklisted the [localhost](http://localhost) ips like
+This lab, the developer is whitelisted only specific application(stock.weliketoshop.net) to access local app.
 
-- http://localhost
-- http://127.0.0.1
-- http://::1
-
-If we checked this payloads for different bypasses 
-
-[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Request Forgery](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery)
-
-I have tried many [localhost](http://localhost) payloads from the above link but this is working form me
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
+
+The only way is the URL must contains this domain [stock.weliketoshop.net](http://stock.weliketoshop.net/). 
+
+We will try adding it but as a useless
+
+Like if we add # id tag like ⇒ www.google.com/admin?page=1#search-section
+
+#search-section ⇒ didn’t effect the URL
+
+Or we can @ in the domain for LDAP domain controller authentication
+
+Like mohamed@google.com ⇒ will understand it  as login with mohamed into google.com
+
+So, we will Add `localhost` as a trusted domain 
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-Is also blacklist `admin` keyword
+Here we inject [localhost](http://localhost) without the previous error (accept it), then we can add # to ignore the rest of url and still the app see the whitelisted domain still exists.
+
+But if we added the #, it will detect it
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
 
-so, if we changed it to `ADMIN` it will paybassed
+we can encode it using URL encoding to baypass the firewall, but it didn’t work, we can do double encoded and its working 😃
 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
 </p>
 
+But it didn’t work if we type /admin here
+
 <p align="center" width="100%">
   <img src="image5.png" width="800" hight="500"/>
+</p>
+
+but it works if we type it at last
+
+<p align="center" width="100%">
+  <img src="image6.png" width="800" hight="500"/>
+</p>
+
+
+<p align="center" width="100%">
+  <img src="image7.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image8.png" width="800" hight="500"/>
 </p>
