@@ -15,7 +15,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] Insecure deserialization
 - [x] JWT
 - [x] OS Command Injection
-- [x] Ouath2
+- [x] OAuth2
 - [x] [Path Traversal (Directory Traversal)](https://github.com/aboelkassem/portswigger-labs/tree/main/Path%20Traversal%20(Directory%20Traversal))
 - [x] Server-side template injection
 - [x] [SQL Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection)
