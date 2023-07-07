@@ -1,45 +1,34 @@
-# Lab: Forced OAuth profile linking
+# Lab: JWT authentication bypass via unverified signature
 
-**Link**: https://portswigger.net/web-security/oauth/lab-oauth-forced-oauth-profile-linking
+**Link**: https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-unverified-signature
 
 **Solution**:
 
-This lab contains a functionality for linking a social media account with GET request without CSRF token
+In this lab we will use burp extension called JWT editor.
 
+- Highlight the requests that used JWT
+- In the repeater, there is JWT token editor
+  
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-<p align="center" width="100%">
-  <img src="image2.png" width="800" hight="500"/>
-</p>
-
-So the redirecting oauth code can be used to link any user’s account to my own user
+This lab is not to verify the signature which consists of
 
 <p align="center" width="100%">
-  <img src="image3.png" width="800" hight="500"/>
+  <img src="image2.png" width="400" hight="500"/>
 </p>
 
-we will inject this code to iframe, so when the any user opened it, it will automatically to my own account.
+So, if I change the username in the payload, it accept it and go admin panel.
 
-1- Try Intercept the oauth-linking code 
-
-2- copy it, because its unique per each oauth flow
-
-3- drop the request
-
-4- Go to the exploit server and Inject the following code
+<p align="center" width="100%">
+  <img src="image3.png" width="400" hight="500"/>
+</p>
 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
 </p>
 
-```html
-<iframe src="https://0a9b0028046d74dfc06c22e700f300cb.web-security-academy.net/oauth-linking?code=ISS5TYMZAeJ74vPBA88NNPXIeO0LrEj-ngFaIhy2Skk"></iframe>
-```
-
-Once delivered to a victim, we will logout and login again with social media.
-
 <p align="center" width="100%">
-  <img src="image4.png" width="800" hight="500"/>
+  <img src="image5.png" width="800" hight="500"/>
 </p>
