@@ -1,57 +1,41 @@
-# Lab: Username enumeration via response timing
+# Lab: Username enumeration via account lock
 
-**Link**: https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing
+**Link**: https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-account-lock
 
 **Solution**:
 
-In this lab, we will notice that if the username is valid, it will take much time to response than the normal request.
+The logic flaw behind this lab, that its block only valid username attempts (the invalid username is not getting blocked).
 
-But there is a IP protection which block your IP if you send it many times.
+To solve this lab, we will brute-force using Turbo Intruder with the list of usernames to see which one will be block (in this case will be a valid username).
+
+- Repeat the same username with 5 requests
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-To bypass it, we will spoof it using `X-Forwarded-For` header and define it different IP address
+After starting attack.
+
+We will see different length types for different message
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-So, for now we will send the intruder with different IPs in each request.
+so `ar` is a valid username, we brute-force passwords.
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
 
-Notice, here we identified two different places to be changes in each request. So we must choose attack type to `Pitchfork` which treat each place separately.
+In the passwords lists, we will notice that the valid password don’t return any error messages.
 
- For first payload
- 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
 </p>
 
-For second payload
+so `username=ar&password=amanda` is the correct username and password
 
 <p align="center" width="100%">
   <img src="image5.png" width="800" hight="500"/>
-</p>
-
-In the results, we will filter it using `Time Completed` column
-
-<p align="center" width="100%">
-  <img src="image6.png" width="800" hight="500"/>
-</p>
-
-So `vagrant` is the username based on time delay.
-
-We will brute force it with password lists
-
-<p align="center" width="100%">
-  <img src="image7.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image8.png" width="800" hight="500"/>
 </p>
