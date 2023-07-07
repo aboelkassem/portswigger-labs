@@ -12,7 +12,7 @@ When I tried to enter a invalid username and password, it gives me that this use
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-We will use this list of usernames and pass it to Turbo Intruder (for concurrently requests) or Intruder [usernames.txt](/usernames.txt)
+We will use this list of usernames and pass it to Turbo Intruder (for concurrently requests) or Intruder [usernames.txt](usernames.txt)
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
