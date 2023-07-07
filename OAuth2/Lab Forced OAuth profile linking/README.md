@@ -41,5 +41,5 @@ we will inject this code to iframe, so when the any user opened it, it will auto
 Once delivered to a victim, we will logout and login again with social media.
 
 <p align="center" width="100%">
-  <img src="image4.png" width="800" hight="500"/>
+  <img src="image5.png" width="800" hight="500"/>
 </p>
