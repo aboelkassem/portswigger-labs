@@ -36,4 +36,7 @@ How to know if your request has really passed?
     - this mean The server still waiting the rest of body content
  
 # Labs
-- 
+- [Lab HTTP request smuggling, basic CL.TE vulnerability](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling/Lab%20HTTP%20request%20smuggling%2C%20basic%20CL.TE%20vulnerability)
+- [Lab HTTP request smuggling, basic TE.CL vulnerability](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling/Lab%20HTTP%20request%20smuggling%2C%20basic%20TE.CL%20vulnerability)
+- [Lab HTTP request smuggling, obfuscating the TE header](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling/Lab%20HTTP%20request%20smuggling%2C%20obfuscating%20the%20TE%20header)
+- [Lab HTTP request smuggling, confirming a CL.TE vulnerability via differential responses](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling/Lab%20HTTP%20request%20smuggling%2C%20confirming%20a%20CL.TE%20vulnerability%20via%20differential%20responses)
