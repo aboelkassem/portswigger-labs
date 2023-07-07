@@ -1,16 +1,16 @@
-# Lab: User ID controlled by request parameter with data leakage in redirect
+# Lab: User ID controlled by request parameter with password disclosure
 
-**Link**: https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-data-leakage-in-redirect
+**Link**: https://portswigger.net/web-security/access-control/lab-user-id-controlled-by-request-parameter-with-password-disclosure
 
 **Solution**:
 
-In site map of the target, you will find /my-account?id=wiener as you will see takes the username as parameter,
+In target site map, notice in /my-account?id=username
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-change it to `carlos`
+if we change it to `administrator`
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
