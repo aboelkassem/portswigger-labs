@@ -13,7 +13,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] [HTTP request smuggling](https://github.com/aboelkassem/portswigger-labs/tree/main/HTTP%20request%20smuggling)
 - [x] [Information Disclosure](https://github.com/aboelkassem/portswigger-labs/tree/main/Information%20Disclosure)
 - [x] [Insecure deserialization](https://github.com/aboelkassem/portswigger-labs/tree/main/Insecure%20deserialization)
-- [x] JWT
+- [x] [JWT](https://github.com/aboelkassem/portswigger-labs/tree/main/JWT)
 - [x] [OS Command Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/OS%20Command%20Injection)
 - [x] [OAuth2](https://github.com/aboelkassem/portswigger-labs/tree/main/OAuth2)
 - [x] [Path Traversal (Directory Traversal)](https://github.com/aboelkassem/portswigger-labs/tree/main/Path%20Traversal%20(Directory%20Traversal))
