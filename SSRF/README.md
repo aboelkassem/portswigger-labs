@@ -1,2 +1,7 @@
-# portswigger-labs
-This is my space for practicing portswigger labs and web vulnerabilities
+# SSRF
+
+Try to send a request from public app to internal network app
+
+
+## Labs
+- 
