@@ -1,57 +1,37 @@
-# Lab: Username enumeration via response timing
+# Lab: Broken brute-force protection, IP block
 
-**Link**: https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-response-timing
+**Link**: https://portswigger.net/web-security/authentication/password-based/lab-broken-bruteforce-protection-ip-block
 
 **Solution**:
 
-In this lab, we will notice that if the username is valid, it will take much time to response than the normal request.
+في اللاب دا هو بيعمل بلوك ليك بعد عدد 3 محاولات .. وانت اوريدي معاك ايميل صحيح وايميل الضحية
 
-But there is a IP protection which block your IP if you send it many times.
+محتاج تقعد تجرب في الباسوردات
+
+ف الحل انك تبعت اثنين غلط وواحد صح بحيث كأنة رجع تاني للصفر
+
+We can make it using Turbo Intruder or just manually through create two txt files to switch between them.
+
+I have created manually two txt files to simulate this scenario
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-To bypass it, we will spoof it using `X-Forwarded-For` header and define it different IP address
+Added [passwords.txt](passwords - Copy.txt) and [usernames.txt](usernames - Copy.txt) to Intruder.
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-So, for now we will send the intruder with different IPs in each request.
+You will find we bypassed the IP protection
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
 
-Notice, here we identified two different places to be changes in each request. So we must choose attack type to `Pitchfork` which treat each place separately.
+Here is the password
 
- For first payload
- 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
-</p>
-
-For second payload
-
-<p align="center" width="100%">
-  <img src="image5.png" width="800" hight="500"/>
-</p>
-
-In the results, we will filter it using `Time Completed` column
-
-<p align="center" width="100%">
-  <img src="image6.png" width="800" hight="500"/>
-</p>
-
-So `vagrant` is the username based on time delay.
-
-We will brute force it with password lists
-
-<p align="center" width="100%">
-  <img src="image7.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image8.png" width="800" hight="500"/>
 </p>
