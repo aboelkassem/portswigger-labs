@@ -1,26 +1,35 @@
-# Lab: Basic SSRF against another back-end system
+# Lab: SSRF with blacklist-based input filter
 
-**Link**: https://portswigger.net/web-security/ssrf/lab-basic-ssrf-against-backend-system
+**Link**: https://portswigger.net/web-security/ssrf/lab-ssrf-with-blacklist-filter
 
 **Solution**:
 
-Like the above lab but he told you that the internal system on `192.168.0.X` so we need to send this request to Intruder to brute force it.
+In this lab, the developer has blacklisted the [localhost](http://localhost) ips like
 
+- http://localhost
+- http://127.0.0.1
+- http://::1
+
+If we checked this payloads for different bypasses 
+
+[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Request Forgery](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Request%20Forgery)
+
+I have tried many [localhost](http://localhost) payloads from the above link but this is working form me
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
-
-Change payload
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-You will notice which service which reply to you with 200 OK with id (192.168.0.78)
+Is also blacklist `admin` keyword
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
+
+so, if we changed it to `ADMIN` it will paybassed
 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
@@ -28,8 +37,4 @@ You will notice which service which reply to you with 200 OK with id (192.168.0.
 
 <p align="center" width="100%">
   <img src="image5.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image6.png" width="800" hight="500"/>
 </p>
