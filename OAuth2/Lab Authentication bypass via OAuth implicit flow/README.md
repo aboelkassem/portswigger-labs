@@ -1,36 +1,24 @@
-# Lab: Basic server-side template injection
+# Lab: Authentication bypass via OAuth implicit flow
 
-**Link**: https://portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-basic
+**Link**: https://portswigger.net/web-security/oauth/lab-oauth-authentication-bypass-via-oauth-implicit-flow
 
 **Solution**:
 
-This lab uses ERB templates
+In this lab, it doesn’t validate the token with provided email in oauth server `/authenticate` 
 
-https://docs.ruby-lang.org/en/2.3.0/ERB.html
-
-according to the payloads for SSTI for ruby
-
-[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Template Injection#ruby](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#ruby)
-
-So if we tried the first payload `<%= 7 * 7 %>` we will find its already executed
+and depends on the email for authentication process in the oauth
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-To perform RCE
-
-`<%= system('cat /etc/passwd') %>`
-
-and it works
+We will modify the email in the repeater
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
-To Solve the lab, we will change the command to delete file
-
-`<%= system('rm /home/carlos/morale.txt') %>`
+see the response in the browser
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
