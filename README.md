@@ -19,7 +19,7 @@ The repository covers a wide range of web vulnerabilities, including but not lim
 - [x] [Path Traversal (Directory Traversal)](https://github.com/aboelkassem/portswigger-labs/tree/main/Path%20Traversal%20(Directory%20Traversal))
 - [x] Server-side template injection
 - [x] [SQL Injection](https://github.com/aboelkassem/portswigger-labs/tree/main/SQL%20Injection)
-- [x] SSRF
+- [x] [SSRF](https://github.com/aboelkassem/portswigger-labs/tree/main/SSRF)
 - [x] [XXE](https://github.com/aboelkassem/portswigger-labs/tree/main/XXE)
 
 # Contributing
