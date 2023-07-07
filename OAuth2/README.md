@@ -25,4 +25,5 @@ https://portswigger.net/web-security/oauth/grant-types
 </p>
 
 ## Labs
-- 
+- [Lab Authentication bypass via OAuth implicit flow](https://github.com/aboelkassem/portswigger-labs/tree/main/OAuth2/Lab%20Authentication%20bypass%20via%20OAuth%20implicit%20flow)
+- [Lab Forced OAuth profile linking](https://github.com/aboelkassem/portswigger-labs/tree/main/OAuth2/Lab%20Forced%20OAuth%20profile%20linking)
