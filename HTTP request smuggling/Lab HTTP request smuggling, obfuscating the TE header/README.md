@@ -1,23 +1,13 @@
-# Lab: HTTP request smuggling, basic TE.CL vulnerability
+# Lab: HTTP request smuggling, obfuscating the TE header
 
-**Link**: https://portswigger.net/web-security/request-smuggling/lab-basic-te-cl
+**Link**: https://portswigger.net/web-security/request-smuggling/lab-obfuscating-te-header
 
 **Solution**:
+In this lab, two server (front and back) understand the TE (transfer encoding)
 
-دا عكس اللاب الي فات … الفرونت بيدعم الtransfer encoding و السيرفر بيدعم content length
+The idea here is the two servers handle duplicate http request headers in different ways..
 
-ف عشان كدا هنلعب ف ال transfer-encoding
-
-ف هنا هنديلة حجم الchunk كلها مرة واحدة بالhexdecimal 
-
-وبكدا هيفهم ان الريكوست خلص وينقل علي الي بعدة
-
-The following screen shows
-
-- We need to pass the content-length: xx in the second request to make the server understand it
-- If we calculated the selection part in hexadecimal, we will find it `2b`
-- So, we but that the chunked size `2b` for then next request to be reflected
-
+So, we will give it duplicate TE header with different values
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
