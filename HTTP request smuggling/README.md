@@ -6,22 +6,21 @@ https://portswigger.net/web-security/request-smuggling
 </p>
 
 
-كل الفكرة ان اليوزر بيبعت للفرونت اند ع بروكسي او لود بلانسر والسيرفر بيprocess الريسكوستس دي بطريقة sequential ويبدأ السيرفر يشوف الهيدرز بتاع الريكوست وبناء عليها ياخد قرار
+When the user send a request to client/load-balancer, the server process these requests sequential and based on that take decicions
+So, we will fool the server with fake request that we've done with first request and start process the request after that
 
-ف هنا احنا ممكن نخدع السيرفر باننا نديلة ريكوست مزيف معناه اننا خلصنا وابدأ بالريكوست الي جاي بعدي
-
-وهنا السيرفر بيعتمد ع اثنين هيدرز عشان يحدد دا
-
-- Content- Length = بيحدد حجم البدي
-- Transaction-Encoding = بيحدد نوع النقل = chunked يعني اجزاء وكل جزء مساحتة كذا
-    - لو قيمة chunked ب 0 يعني كدا انة خلص الريكوست
+In this case, the server depends on two headers
+- Content- Length = size of request
+- Transaction-Encoding = transfer format (the request chunked)
+    - if the value of chunked = 0, mean the request is finished
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
-كل الي هنعملة اننا نشوف السيرفر بي support انهي هيدرز من دول وبيعالجة فعلا 
 
-وبعد كدا نبدأ نلعب بقا 😃
+We will see which server support each way
+
+And start playing 😃
 
 1- Change method request to POST
 
