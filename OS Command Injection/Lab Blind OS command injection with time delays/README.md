@@ -1,23 +1,25 @@
-# Lab: OS command injection, simple case
+# Lab: Blind OS command injection with time delays
 
-**Link**: https://portswigger.net/web-security/os-command-injection/lab-simple
+**Link**: https://portswigger.net/web-security/os-command-injection/lab-blind-time-delays
 
 **Solution**:
 
-In stock POST request, try cause an error by editing the request parameters 
+This is the second type of the attack, which is not print any output but executed in the background.
 
-If I added any special characters like the above, it gives us `sh` error (which is this is a OS command)
+To know if it executed or not, try add time delays and see its response
+
+We can cause time delay by ping the localhost
+
+In this lab, in feedback/submit function, we will add to `email` parameter OS command like the following
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-So, if we append another command with `|` will execute it
+and encode it into URL-encoding.
+
+You will notice that the response delays for 10 seconds.
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image3.png" width="800" hight="500"/>
 </p>
