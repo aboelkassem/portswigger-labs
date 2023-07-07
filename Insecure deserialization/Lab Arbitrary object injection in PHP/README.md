@@ -1,34 +1,54 @@
-# Lab: Using application functionality to exploit insecure deserialization
+# Lab: Arbitrary object injection in PHP
 
-**Link**: https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-using-application-functionality-to-exploit-insecure-deserialization
+**Link**: https://portswigger.net/web-security/deserialization/exploiting/lab-deserialization-arbitrary-object-injection-in-php
 
 **Solution**:
 
-In the delete function, by logic it supposed that he deleted the images or anything related to this user.
-
-In delete request, we notice that the serialized object have the path of user’s assets
+If we open the source code of any page, we will find a comment for path of php file
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-We will change this path to the file path we need to be deleted
-
-```bash
-"avatar_link";s:19:"users/wiener/avatar" => "avatar_link";s:23:"/home/carlos/morale.txt"
-```
-
-and then click ApplyChanges and Forward the request
+If we navigate to it, it returns nothing
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
 
+We will try add `~` mark after file name
+
+- This mark is added to save unsaved changes in text editor for later used/opening
+
+We will see the source code of the page
+
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
 
+```bash
+function __destruct() {
+        // Carlos thought this would be a good idea
+        if (file_exists($this->lock_file_path)) {
+            unlink($this->lock_file_path);
+        }
+    }
+```
+
+the above function is deleted the file in the `lock_file_path` variable 
+
+So, we will create a serialized object of this class and put the file we want to be deleted in this variable `lock_file_path` to be like the following
+
+```bash
+O:14:"CustomTemplate":1:{s:14:"lock_file_path";s:23:"/home/carlos/morale.txt";}
+```
+
+Encode it as base64 and replace it in the request session
 
 <p align="center" width="100%">
-  <img src="image7.png" width="800" hight="500"/>
+  <img src="image4.png" width="800" hight="500"/>
+</p>
+
+<p align="center" width="100%">
+  <img src="image5.png" width="800" hight="500"/>
 </p>
