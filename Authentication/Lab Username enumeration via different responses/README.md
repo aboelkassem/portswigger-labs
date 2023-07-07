@@ -1,45 +1,45 @@
-# Lab: JWT authentication bypass via weak signing key
+# Lab: Username enumeration via different responses
 
-**Link**: https://portswigger.net/web-security/jwt/lab-jwt-authentication-bypass-via-weak-signing-key
+**Link**: https://portswigger.net/web-security/authentication/password-based/lab-username-enumeration-via-different-responses
 
 **Solution**:
 
-This lab has weak signing key, we can bypass it using brute-force with this list https://github.com/wallarm/jwt-secrets/blob/master/jwt.secrets.list
+In this lab, we will brute force usernames. 
 
-And will use `hashcat` or [john](https://github.com/openwall/john) tools to brute-force
-
-https://portswigger.net/web-security/jwt#brute-forcing-secret-keys-using-hashcat
-
-1- Brute force the secret key using hashcat using the following command
-
-```bash
-hashcat-a 0 -m 16500 "eyJraWQiOiJjOTU1ZDlmNS1hYjZlLTQ1YWQtYTU5My0xNWYwMzJlOTMzMzYiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJwb3J0c3dpZ2dlciIsInN1YiI6IndpZW5lciIsImV4cCI6MTY3OTE0MjUyNH0.16kGAs15tikJPMTEUQlToZfSRuKmrKbhmQzfgIXUxgo" "C:\Users\Mohamed\Downloads\jwt.secrets.list"
-```
+When I tried to enter a invalid username and password, it gives me that this username only is invalid. So we will enumerate usernames until one of them is valid.
 
 <p align="center" width="100%">
   <img src="image1.png" width="800" hight="500"/>
 </p>
 
-- Encode this signing key into base64
+We will use this list of usernames and pass it to Turbo Intruder (for concurrently requests) or Intruder [usernames.txt](/usernames.txt)
 
 <p align="center" width="100%">
   <img src="image2.png" width="800" hight="500"/>
 </p>
-
-- Take this value and will create a signing key with this secret.
   
 <p align="center" width="100%">
   <img src="image3.png" width="800" hight="500"/>
 </p>
 
-In the request, choose the signing key we’ve been created
+Click StartAttack, after completed, Check/filter requests length to see different responses
 
 <p align="center" width="100%">
   <img src="image4.png" width="800" hight="500"/>
 </p>
 
+This mean that this username is correct
+
+We will freeze this username, and brute-force the password
+
 <p align="center" width="100%">
   <img src="image5.png" width="800" hight="500"/>
+</p>
+
+This means the correct password is `jessica`
+
+<p align="center" width="100%">
+  <img src="image6.png" width="800" hight="500"/>
 </p>
 
 <p align="center" width="100%">
